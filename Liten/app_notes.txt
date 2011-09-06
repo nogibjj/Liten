@@ -1,6 +1,0 @@
-MP3, 
-AIFF, 
-WAV, 
-MPEG-4, 
-AAC (.m4a) and 
-Apple Lossless
