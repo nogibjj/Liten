@@ -11,7 +11,7 @@ NSString *LoadImageDidFinish = @"LoadDuplicateDidFinish";
 - (id)initWithPath:(NSString *)path
 {
 	self = [super init];
-    loadPath = [path retain];
+    loadPath = path;
 
     return self;
 }
@@ -80,7 +80,7 @@ NSString *LoadImageDidFinish = @"LoadDuplicateDidFinish";
 						dateRef = CFDateCreate(kCFAllocatorDefault, cfTime);
 						if (dateRef != nil)
 						{
-							NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
+							NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
 							[formatter setTimeStyle:NSDateFormatterNoStyle];
 							[formatter setDateStyle:NSDateFormatterShortStyle];
 							

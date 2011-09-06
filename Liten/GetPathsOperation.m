@@ -13,13 +13,12 @@
     // the operation class must have an -initWithPath: method.
     if (![cc instancesRespondToSelector:@selector(initWithPath:)])
 	{
-		[self release];
 		return nil;
     }
 	
-    rootPath = [pp retain];
+    rootPath = pp;
     opClass = cc;
-    queue = [qq retain];
+    queue = qq;
 	filterSize = fs;
 	NSLog(@"VALUE: in GetPathsOperation: %@", fs);
 	//Set Max Threads

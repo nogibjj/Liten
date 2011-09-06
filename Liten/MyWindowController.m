@@ -37,7 +37,7 @@
 // -------------------------------------------------------------------------------
 - (id)init
 {
-	[super init];
+	self = [super init];
 	
 	queue = [[NSOperationQueue alloc] init];
 	tableRecords = [[NSMutableArray alloc] init];
@@ -166,7 +166,6 @@
 	GetPathsOperation* getPathsOp = [[GetPathsOperation alloc] initWithRootPath:fromPath operationClass:[LoadOperation class] queue:queue filterSize:fs];
 	
 	[queue addOperation: getPathsOp];	// this will start the "GetPathsOperation"
-	[getPathsOp release];
 }
 
 // -------------------------------------------------------------------------------
@@ -316,7 +315,6 @@
 	//NSLog(@"contextInfo: %@", contextInfo);
 
     [panel orderOut:self];
-	[panel release];
 	
 	if (returnCode == NSFileHandlingPanelOKButton)
 	{
@@ -347,7 +345,7 @@
 // -------------------------------------------------------------------------------
 - (IBAction)startAction:(id)sender
 {	
-	//NSLog(@"sender: %@", sender);
+	NSLog(@"sender: %@", sender);
     NSOpenPanel *openPanel = [[NSOpenPanel alloc] init];
 	
 	[openPanel setResolvesAliases:YES];
@@ -358,8 +356,9 @@
 	[openPanel setMessage:@"Choose a directory to deduplicate:"];
 	[openPanel setTitle:@"Choose"];
 	
-	//[openPanel beginSheetForDirectory:nil file:nil types:nil modalForWindow:[self window] modalDelegate:self didEndSelector:@selector(chooseDidEnd:returnCode:contextInfo:) contextInfo:nil];
-    [openPanel beginSheetModalForWindow:self.window completionHandler:nil];
+	[openPanel beginSheetForDirectory:nil file:nil types:nil modalForWindow:[self window] modalDelegate:self didEndSelector:@selector(chooseDidEnd:returnCode:contextInfo:) contextInfo:nil];
+    NSLog(@"sender: %@", sender);
+    //[openPanel beginSheetModalForWindow:self.window completionHandler:nil];
     
 }
 
@@ -391,7 +390,7 @@
 // -------------------------------------------------------------------------------
 - (NSTimer *)timer
 {
-    return [[timer retain] autorelease];
+    return timer;
 }
 
 // -------------------------------------------------------------------------------
@@ -401,8 +400,7 @@
 {
     if (timer != value)
 	{
-        [timer release];
-        timer = [value retain];
+        timer = value;
     }
 }
 
@@ -440,7 +438,6 @@
 	[tableRecords removeAllObjects];
 	[tableRecords addObjectsFromArray:sorted];
 	[myTableView reloadData];
-	[sorted release];
 }
 
 
@@ -467,7 +464,6 @@
 		[inTableView setIndicatorImage:[NSImage imageNamed:@"NSAscendingSortIndicator"] inTableColumn:tableColumn];  
 		NSSortDescriptor *sortDesc = [[NSSortDescriptor alloc] initWithKey:[tableColumn identifier] ascending:YES];
 		[self sortWithDescriptor:sortDesc];
-		[sortDesc release];
 		NSLog(@"Ascending Sort: %@", tableColumn);
 	}
 	else
@@ -476,7 +472,6 @@
 		NSSortDescriptor *sortDesc = [[NSSortDescriptor alloc] initWithKey:[tableColumn identifier] ascending:NO];
 		[self sortWithDescriptor:sortDesc];
 		NSLog(@"Descending Sort: %@", tableColumn);
-		[sortDesc release];
 	}
 }
 
