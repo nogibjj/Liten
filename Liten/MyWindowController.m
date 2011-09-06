@@ -358,7 +358,9 @@
 	[openPanel setMessage:@"Choose a directory to deduplicate:"];
 	[openPanel setTitle:@"Choose"];
 	
-	[openPanel beginSheetForDirectory:nil file:nil types:nil modalForWindow:[self window] modalDelegate:self didEndSelector:@selector(chooseDidEnd:returnCode:contextInfo:) contextInfo:nil];
+	//[openPanel beginSheetForDirectory:nil file:nil types:nil modalForWindow:[self window] modalDelegate:self didEndSelector:@selector(chooseDidEnd:returnCode:contextInfo:) contextInfo:nil];
+    [openPanel beginSheetModalForWindow:self.window completionHandler:nil];
+    
 }
 
 

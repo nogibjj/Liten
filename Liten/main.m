@@ -3,7 +3,5 @@
 
 int main(int argc, char *argv[])
 {
-	
-    objc_startCollectorThread();
 	return NSApplicationMain(argc, (const char **) argv);
 }
