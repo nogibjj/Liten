@@ -13,7 +13,7 @@
 	<key>CFBundleIconFile</key>
 	<string>liten.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.noahgift.liten</string>
+	<string>com.zebulant.liten</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
