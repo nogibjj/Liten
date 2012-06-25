@@ -71,7 +71,7 @@
 -(void)updateCountIndicator
 {
 	// set the number of images found indicator string
-	NSString *resultStr = [NSString stringWithFormat:@"Duplicates found: %ld", [tableRecords count]];
+	NSString *resultStr = [NSString stringWithFormat:@"Duplicates found: %d", [tableRecords count]];
 	[self setResultsString: resultStr];
 }
 
