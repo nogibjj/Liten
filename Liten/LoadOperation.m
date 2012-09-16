@@ -84,7 +84,7 @@ NSString *LoadImageDidFinish = @"LoadDuplicateDidFinish";
 							[formatter setTimeStyle:NSDateFormatterNoStyle];
 							[formatter setDateStyle:NSDateFormatterShortStyle];
 							
-							NSString *modDateStr = [formatter stringFromDate:(__bridge_transfer NSDate*)dateRef];
+							NSString *modDateStr = [formatter stringFromDate:( NSDate*)dateRef];
 							
 							//Get byte size
 							NSFileManager *man = [[NSFileManager alloc] init];
