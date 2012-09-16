@@ -1,6 +1,6 @@
 Compiling a build:
 
-You will need to target the 10.6 SDK because Liten depends on not deprecated API calls.  
+You will need to target the 10.7 SDK because Liten depends on a deprecated API calls.  
 
 Background:
 
