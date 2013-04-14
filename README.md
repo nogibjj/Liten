@@ -10,7 +10,7 @@ Essentially, an md5 checksum is only performed after the size of the file matche
 
 You can download the application without compiling it here:
 
-https://github.com/founders/Liten/blob/master/downloads/LitenApplication.zip
+https://github.com/founders/Liten/blob/master/downloads/LitenApplication.zip?raw=true
 
 TO DO:
 
