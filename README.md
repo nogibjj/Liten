@@ -8,6 +8,10 @@ The original project was started by building off of some sample code.  The core 
 
 Essentially, an md5 checksum is only performed after the size of the file matches a key in a hash.  This makes for a pretty efficient tree walk.
 
+You can download the application without compiling it here:
+
+https://github.com/founders/Liten/blob/master/downloads/LitenApplication.zip
+
 TO DO:
 
 1.  Updating the deprecated API calls to 10.8
